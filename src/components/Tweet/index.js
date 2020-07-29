@@ -7,11 +7,12 @@ import ActionBar from "./ActionBar";
 import { TweetContext } from "../TweetContext";
 
 const Tweet = () => {
-  const { tweetContents } = React.useContext(TweetContext);
+  const { tweetContents, date } = useContext(TweetContext);
   return (
     <Wrapper>
       <Header />
       <TweetContents>{tweetContents}</TweetContents>
+      <Timestamp>{date}</Timestamp>
       <Divider />
       <ActionBar />
       <Divider />
