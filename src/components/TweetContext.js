@@ -14,8 +14,8 @@ export const TweetProvider = ({ children }) => {
   const displayName = "Carmen Sandiego ✨";
   const username = "carmen-sandiego";
   const avatarSrc = avatar;
-  const isRetweetedByCurrentUser = numOfRetweets;
-  const isLikedByCurrentUser = numOfLikes;
+  const isRetweetedByCurrentUser = isRetweeted;
+  const isLikedByCurrentUser = isLiked;
   const date = moment().format("h:m a - MMM Do, YYYY");
 
   const handleToggleLike = () => {
