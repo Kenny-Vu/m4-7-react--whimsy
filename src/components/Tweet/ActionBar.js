@@ -4,8 +4,8 @@ import styled from "styled-components";
 import LikeButton from "../LikeButton";
 import Action from "./Action";
 import TweetActionIcon from "./TweetActionIcon";
-
 import { TweetContext } from "../TweetContext";
+import ScaleIn from "../LikeButton/ScaleIn";
 
 const ActionBar = () => {
   const {
@@ -20,10 +20,19 @@ const ActionBar = () => {
         <TweetActionIcon kind="reply" />
       </Action>
       <Action onClick={handleToggleRetweet} color="rgb(23, 191, 99)" size={40}>
-        <TweetActionIcon
-          kind="retweet"
-          color={isRetweetedByCurrentUser ? "rgb(23, 191, 99)" : undefined}
-        />
+        {isRetweetedByCurrentUser ? (
+          <ScaleIn>
+            <TweetActionIcon
+              kind="retweet"
+              color={isRetweetedByCurrentUser ? "rgb(23, 191, 99)" : undefined}
+            />
+          </ScaleIn>
+        ) : (
+          <TweetActionIcon
+            kind="retweet"
+            color={isRetweetedByCurrentUser ? "rgb(23, 191, 99)" : undefined}
+          />
+        )}
       </Action>
       <Action onClick={handleToggleLike} color="rgb(224, 36, 94)" size={40}>
         <LikeButton isLiked={isLikedByCurrentUser} />
