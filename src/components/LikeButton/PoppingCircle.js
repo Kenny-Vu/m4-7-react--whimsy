@@ -41,7 +41,7 @@ const Wrapper = styled.div`
   border-radius: 50%;
   display: block;
   position: absolute;
-  z-index: 1;
+
   animation: ${fade} forwards 300ms, ${scale} forwards 500ms;
 `;
 
